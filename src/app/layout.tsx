@@ -2,6 +2,8 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import {Metadata} from "next";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
     title: "Home",
@@ -34,12 +36,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-
       <Header/>
-
         {children}
-
       <Footer/>
+      <Analytics/>
+      <SpeedInsights/>
       </body>
     </html>
   );
